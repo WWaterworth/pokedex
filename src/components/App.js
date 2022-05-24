@@ -5,27 +5,25 @@ const App = () => {
   const [allPokemon, setPokemon] = useState([]);
   const [singlePokemon, setSinglePokemon] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState("");
-  const [url, setUrl] = useState("");
 
   useEffect(() => {
     const getAllPokemon = async () => {
       const getPokemon = await fetchPokemon(
         "https://pokeapi.co/api/v2/pokemon/?limit=151"
       );
-      console.log("results from getPokemon", getPokemon.results);
       setPokemon(getPokemon.results);
     };
     getAllPokemon();
   }, [setPokemon]);
 
   const handleSelect = async (event) => {
+    const name = event.target.value;
     setSelectedPokemon(event.target.value);
     const singlePoke = await fetchSinglePokemon(
-      `https://pokeapi.co/api/v2/pokemon/20/`
+      `https://pokeapi.co/api/v2/pokemon/${name}/`
     );
     setSinglePokemon(singlePoke);
   };
-  console.log("single pokemon state", singlePokemon);
 
   return (
     <>
