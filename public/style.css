@@ -1,0 +1,62 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.abilities {
+  border: 2px solid blue;
+  width: 10em;
+}
+
+.basicInfo {
+  border: 2px solid green;
+  width: 23em;
+}
+
+body {
+  border: 2px solid yellow;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: flex-end;
+}
+
+main {
+  border: 2px solid purple;
+}
+
+.navigation {
+  border: 2px solid orange;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 37.5em 0 2em;
+}
+
+.pokemonCard {
+  border: 2px solid orchid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 10em 0 10em;
+}
+.stats {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 12em;
+}
+
+.types {
+  border: 2px solid red;
+  width: 10em;
+}
+
+.welcome {
+  justify-content: flex-end;
+}
