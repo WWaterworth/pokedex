@@ -1,6 +1,6 @@
 import { fetchPokemon, fetchSinglePokemon } from "../api";
 import { useState, useEffect } from "react";
-import { Basic } from "./index";
+import { Basic, Types, Stats, Abilities } from "./index";
 
 const App = () => {
   const [allPokemon, setPokemon] = useState([]);
@@ -64,53 +64,14 @@ const App = () => {
         <h1 className="welcome">Welcome to the Pokedex</h1>
       </nav>
       <div className="pokemonCard">
-        {/* <div className="basicInfo">
-          <h2>Selected Pokemon: {selectedPokemon}</h2>
-          <h3>Id Number: {singlePokemon.id}</h3>
-          <img src={sprite} />
-          <h3>Base Experience: {singlePokemon.base_experience}</h3>
-          <h3>Height: {singlePokemon.height}</h3>
-          <h3>Weight: {singlePokemon.weight}</h3>
-        </div> */}
         <Basic
           selectedPokemon={selectedPokemon}
           singlePokemon={singlePokemon}
           sprite={sprite}
         />
-        <div className="types">
-          <h4>{selectedPokemon}'s Types:</h4>
-          {types.map((elem) => {
-            return (
-              <>
-                <p>{elem.type.name}</p>
-              </>
-            );
-          })}
-        </div>
-        <div className="stats">
-          <h4>{selectedPokemon}'s Stats:</h4>
-          {stats.map((stat) => {
-            return (
-              <>
-                <p>
-                  {stat.stat.name}: {stat.base_stat}
-                </p>
-              </>
-            );
-          })}
-        </div>
-        <div className="abilities">
-          <h4>{selectedPokemon}'s Abilities</h4>
-          {abilities.map((move) => {
-            return (
-              <div>
-                <ul>
-                  <li>{move.ability.name}</li>
-                </ul>
-              </div>
-            );
-          })}
-        </div>
+        <Types types={types} selectedPokemon={selectedPokemon} />
+        <Stats stats={stats} selectedPokemon={selectedPokemon} />
+        <Abilities abilities={abilities} selectedPokemon={selectedPokemon} />
       </div>
     </main>
   );
