@@ -1,6 +1,8 @@
 export const fetchAllPokemon = async () => {
   try {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=20");
+    const response = await fetch(
+      "https://pokeapi.co/api/v2/pokemon/?limit=151"
+    );
     const data = await response.json();
     return data;
   } catch (error) {
@@ -8,9 +10,9 @@ export const fetchAllPokemon = async () => {
   }
 };
 
-export const fetchSinglePokemon = async (url) => {
+export const fetchSinglePokemon = async (name) => {
   try {
-    const response = await fetch(url);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const data = await response.json();
     return data;
   } catch (error) {

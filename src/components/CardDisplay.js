@@ -1,19 +1,29 @@
 import React from "react";
-import { fetchSinglePokemon } from "../api";
 
-const CardDisplay = ({ pokemon }) => {
-  
+const CardDisplay = ({ selectedPokemon, name, types, stats, sprite }) => {
   return (
     <div className="card-display">
-      {pokemon &&
-        pokemon.map((poke) => {
-          return (
-            <div className="card">
-              <p>{poke.name}</p>
-              <p></p>
-            </div>
-          );
-        })}
+      <img src={sprite} />
+      <h1>{name}</h1>
+      <div className="types">
+        <ul>
+          {types &&
+            types.map((type, idx) => {
+              return <li key={idx}>{type.type.name}</li>;
+            })}
+        </ul>
+      </div>
+      {!stats ? <h3>Stats:</h3> : null}
+      <ul>
+        {stats &&
+          stats.map((stat) => {
+            return (
+              <li>
+                {stat.stat.name}: {stat.base_stat}
+              </li>
+            );
+          })}
+      </ul>
     </div>
   );
 };
