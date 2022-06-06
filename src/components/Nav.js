@@ -11,7 +11,6 @@ const Nav = ({
 }) => {
   const getSinglePokemon = async (name) => {
     const singlePokemon = await fetchSinglePokemon(name);
-    setSelectedPokemon(singlePokemon);
     setName(singlePokemon.name);
     setType(singlePokemon.types);
     setStats(singlePokemon.stats);

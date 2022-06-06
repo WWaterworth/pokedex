@@ -2,19 +2,11 @@ import React from "react";
 
 import { Nav } from "./index";
 
-const Header = ({
-  pokemon,
-  setSelectedPokemon,
-  setName,
-  setType,
-  setStats,
-  setSprite,
-}) => {
+const Header = ({ pokemon, setName, setType, setStats, setSprite }) => {
   return (
     <header>
       <Nav
         pokemon={pokemon}
-        setSelectedPokemon={setSelectedPokemon}
         setName={setName}
         setType={setType}
         setStats={setStats}

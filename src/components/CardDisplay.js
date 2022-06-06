@@ -1,9 +1,9 @@
 import React from "react";
 
-const CardDisplay = ({ selectedPokemon, name, types, stats, sprite }) => {
+const CardDisplay = ({ name, types, stats, sprite }) => {
   return (
     <div className="card-display">
-      <img src={sprite} />
+      <img src={sprite} alt="pokemon default front sprite" />
       <h1>{name}</h1>
       <div className="types">
         <ul>
