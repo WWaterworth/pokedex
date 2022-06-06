@@ -2,9 +2,24 @@ import React from "react";
 
 import { Nav } from "./index";
 
-const Header = () => {
+const Header = ({
+  pokemon,
+  setSelectedPokemon,
+  setName,
+  setType,
+  setStats,
+  setSprite,
+}) => {
   return (
     <header>
+      <Nav
+        pokemon={pokemon}
+        setSelectedPokemon={setSelectedPokemon}
+        setName={setName}
+        setType={setType}
+        setStats={setStats}
+        setSprite={setSprite}
+      />
       <img
         id="logo"
         src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png"
