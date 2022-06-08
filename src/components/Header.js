@@ -2,7 +2,7 @@ import React from "react";
 
 import { Nav } from "./index";
 
-const Header = ({ pokemon, setName, setType, setStats, setSprite }) => {
+const Header = ({ pokemon, setName, setType, setStats, setSprite, setId }) => {
   return (
     <header>
       <Nav
@@ -11,6 +11,7 @@ const Header = ({ pokemon, setName, setType, setStats, setSprite }) => {
         setType={setType}
         setStats={setStats}
         setSprite={setSprite}
+        setId={setId}
       />
       <img
         id="logo"

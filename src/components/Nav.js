@@ -1,20 +1,15 @@
 import React from "react";
 import { fetchSinglePokemon } from "../api";
 
-const Nav = ({
-  pokemon,
-  setSelectedPokemon,
-  setName,
-  setType,
-  setStats,
-  setSprite,
-}) => {
+const Nav = ({ pokemon, setName, setType, setStats, setSprite, setId }) => {
   const getSinglePokemon = async (name) => {
     const singlePokemon = await fetchSinglePokemon(name);
+    console.log(singlePokemon);
     setName(singlePokemon.name);
     setType(singlePokemon.types);
     setStats(singlePokemon.stats);
     setSprite(singlePokemon.sprites.front_default);
+    setId(singlePokemon.id);
   };
 
   const handleSelect = (event) => {

@@ -1,4 +1,4 @@
-import { fetchAllPokemon } from "../api";
+import { fetchAllPokemon, fetchGenTwo } from "../api";
 import { useState, useEffect } from "react";
 import { CardDisplay, Header } from "./index";
 
@@ -8,6 +8,7 @@ const App = () => {
   const [types, setTypes] = useState([]);
   const [stats, setStats] = useState([]);
   const [sprite, setSprite] = useState("");
+  const [id, setId] = useState("");
 
   useEffect(() => {
     const getAllPokemon = async () => {
@@ -18,6 +19,12 @@ const App = () => {
     getAllPokemon();
   }, [setPokemon]);
 
+  const getGenTwo = async () => {
+    const genTwo = await fetchGenTwo();
+    console.log(genTwo.results);
+  };
+  getGenTwo();
+
   return (
     <main>
       <Header
@@ -26,9 +33,16 @@ const App = () => {
         setType={setTypes}
         setStats={setStats}
         setSprite={setSprite}
+        setId={setId}
       />
       <div className="body">
-        <CardDisplay name={name} stats={stats} types={types} sprite={sprite} />
+        <CardDisplay
+          name={name}
+          stats={stats}
+          types={types}
+          sprite={sprite}
+          id={id}
+        />
       </div>
     </main>
   );

@@ -1,24 +1,30 @@
 import React from "react";
 
-const CardDisplay = ({ name, types, stats, sprite }) => {
+const CardDisplay = ({ name, types, stats, sprite, id }) => {
   return (
     <div className="card-display">
-      <img src={sprite} alt="pokemon default front sprite" />
-      <h1>{name}</h1>
-      <div className="types">
-        <ul>
-          {types &&
-            types.map((type, idx) => {
-              return <li key={idx}>{type.type.name}</li>;
-            })}
-        </ul>
+      {sprite ? <h4>Pokedex ID# {id}</h4> : null}
+      {sprite ? (
+        <img id="sprite" src={sprite} alt="pokemon default front sprite" />
+      ) : null}
+      <h2>{name.toUpperCase()}</h2>
+      <div>
+        {types &&
+          types.map((type, idx) => {
+            return (
+              <p id="types" key={idx}>
+                {" "}
+                {type.type.name}{" "}
+              </p>
+            );
+          })}
       </div>
       {!stats ? <h3>Stats:</h3> : null}
       <ul>
         {stats &&
-          stats.map((stat) => {
+          stats.map((stat, idx) => {
             return (
-              <li>
+              <li key={idx}>
                 {stat.stat.name}: {stat.base_stat}
               </li>
             );
