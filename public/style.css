@@ -27,6 +27,11 @@
   height: 25em;
 }
 
+#gen-button {
+  margin: 0 3px 0 3px;
+  padding: 2px 3px 2px 3px;
+}
+
 header {
   background-color: red;
   padding-top: 3px;
@@ -69,4 +74,12 @@ select {
 #types {
   display: flex;
   flex-direction: row;
+}
+
+#type-container {
+  display: flex;
+}
+
+#type-span {
+  margin-right: 5px;
 }
