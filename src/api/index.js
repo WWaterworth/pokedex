@@ -31,3 +31,15 @@ export const fetchGenTwo = async () => {
     throw error;
   }
 };
+
+export const fetchGenThree = async () => {
+  try {
+    const response = await fetch(
+      "https://pokeapi.co/api/v2/pokemon/?limit=135&offset=251"
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

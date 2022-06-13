@@ -1,10 +1,22 @@
 import React from "react";
-import { fetchSinglePokemon } from "../api";
+import {
+  fetchSinglePokemon,
+  fetchAllPokemon,
+  fetchGenTwo,
+  fetchGenThree,
+} from "../api";
 
-const Nav = ({ pokemon, setName, setType, setStats, setSprite, setId }) => {
+const Nav = ({
+  pokemon,
+  setPokemon,
+  setName,
+  setType,
+  setStats,
+  setSprite,
+  setId,
+}) => {
   const getSinglePokemon = async (name) => {
     const singlePokemon = await fetchSinglePokemon(name);
-    console.log(singlePokemon);
     setName(singlePokemon.name);
     setType(singlePokemon.types);
     setStats(singlePokemon.stats);
@@ -18,6 +30,24 @@ const Nav = ({ pokemon, setName, setType, setStats, setSprite, setId }) => {
     getSinglePokemon(name);
   };
 
+  const handleGenTwo = async (event) => {
+    event.preventDefault();
+    const genTwo = await fetchGenTwo();
+    setPokemon(genTwo.results);
+  };
+
+  const handleGenThree = async (event) => {
+    event.preventDefault();
+    const genThree = await fetchGenThree();
+    setPokemon(genThree.results);
+  };
+
+  const handleGenOne = async (event) => {
+    event.preventDefault();
+    const genOne = await fetchAllPokemon();
+    setPokemon(genOne.results);
+  };
+
   return (
     <div>
       <nav>
@@ -29,6 +59,9 @@ const Nav = ({ pokemon, setName, setType, setStats, setSprite, setId }) => {
               return <option key={idx}>{poke.name}</option>;
             })}
         </select>
+        <button onClick={handleGenOne}>Gen 1</button>
+        <button onClick={handleGenTwo}>Gen 2</button>
+        <button onClick={handleGenThree}>Gen 3</button>
       </nav>
     </div>
   );

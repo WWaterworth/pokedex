@@ -1,4 +1,4 @@
-import { fetchAllPokemon, fetchGenTwo } from "../api";
+import { fetchAllPokemon, fetchGenThree } from "../api";
 import { useState, useEffect } from "react";
 import { CardDisplay, Header } from "./index";
 
@@ -19,16 +19,11 @@ const App = () => {
     getAllPokemon();
   }, [setPokemon]);
 
-  const getGenTwo = async () => {
-    const genTwo = await fetchGenTwo();
-    console.log(genTwo.results);
-  };
-  getGenTwo();
-
   return (
     <main>
       <Header
         pokemon={pokemon}
+        setPokemon={setPokemon}
         setName={setName}
         setType={setTypes}
         setStats={setStats}
