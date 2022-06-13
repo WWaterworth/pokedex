@@ -57,6 +57,15 @@ select {
   height: 200px;
 }
 
+#sprite-container {
+  display: flex;
+  justify-content: center;
+}
+
+#top-card-container {
+  display: flex;
+  justify-content: space-between;
+}
 #types {
   display: flex;
   flex-direction: row;
