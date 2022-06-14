@@ -51,7 +51,6 @@ const Nav = ({
   return (
     <div>
       <nav>
-        <label>Select a Pokemon: </label>
         <select onChange={handleSelect}>
           <option>Select a Pokemon</option>
           {pokemon &&
@@ -59,15 +58,11 @@ const Nav = ({
               return <option key={idx}>{poke.name}</option>;
             })}
         </select>
-        <button id="gen-button" onClick={handleGenOne}>
-          Gen 1
-        </button>
-        <button id="gen-button" onClick={handleGenTwo}>
-          Gen 2
-        </button>
-        <button id="gen-button" onClick={handleGenThree}>
-          Gen 3
-        </button>
+        <div class="multi-button">
+          <button onClick={handleGenOne}>Gen 1</button>
+          <button onClick={handleGenTwo}>Gen 2</button>
+          <button onClick={handleGenThree}>Gen 3</button>
+        </div>
       </nav>
     </div>
   );

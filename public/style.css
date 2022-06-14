@@ -44,6 +44,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 14em;
 }
 
 label {
@@ -53,12 +54,63 @@ label {
 }
 
 #logo {
-  margin-right: 38em;
+  margin-right: 39em;
+}
+
+.multi-button {
+  display: flex;
+}
+
+.multi-button button {
+  height: 1.5em;
+  width: 3.5em;
+  font-size: 1rem;
+  margin-top: 11.6em;
+  padding: 0;
+  stroke: black;
+  outline: none;
+}
+.multi-button :nth-child(1) {
+  border-radius: 20px 0 0 20px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.multi-button :nth-child(2) {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.multi-button :nth-child(3) {
+  border-radius: 0 20px 20px 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+button:hover {
+  cursor: pointer;
+  filter: drop-shadow(3px 5px 5px rgba(0, 0, 0, 0.45));
+}
+button:active {
+  filter: none;
+  transform: scale(0.95);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
 }
 
 select {
-  margin-top: 13em;
+  margin-top: 13.8em;
+  margin-right: 5px;
+  margin-left: 5px;
   border: solid 2.5px blue;
+  border-radius: 20px;
+  height: 2em;
+}
+
+select:hover {
+  filter: drop-shadow(3px 5px 5px rgba(0, 0, 0, 0.45));
 }
 
 p#grass {
