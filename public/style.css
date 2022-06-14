@@ -67,6 +67,17 @@ select {
   justify-content: center;
 }
 
+#stat-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#stat-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
+}
+
 #top-card-container {
   display: flex;
   justify-content: space-between;
