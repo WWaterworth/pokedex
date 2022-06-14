@@ -24,26 +24,30 @@ const CardDisplay = ({ name, types, stats, sprite, id }) => {
       </div>
       <div id="sprite-container">
         {sprite ? (
-          <img id="sprite" src={sprite} alt="pokemon default front sprite" />
+          <>
+            <img id="sprite" src={sprite} alt="pokemon default front sprite" />
+          </>
         ) : null}
       </div>
-      <div id="stat-container">
-        <div id="stat-text">
-          <p>Hp:</p>
-          <p>Attack:</p>
-          <p>Defense:</p>
-          <p>Special Attack:</p>
-          <p>Special Defense:</p>
-          <p>Speed:</p>
+      {sprite ? (
+        <div id="stat-container">
+          <div id="stat-text">
+            <p>Hp:</p>
+            <p>Attack:</p>
+            <p>Defense:</p>
+            <p>Special Attack:</p>
+            <p>Special Defense:</p>
+            <p>Speed:</p>
+          </div>
+          {!stats ? <h3>Stats:</h3> : null}
+          <ul>
+            {stats &&
+              stats.map((stat, idx) => {
+                return <li key={idx}>{stat.base_stat}</li>;
+              })}
+          </ul>
         </div>
-        {!stats ? <h3>Stats:</h3> : null}
-        <ul>
-          {stats &&
-            stats.map((stat, idx) => {
-              return <li key={idx}>{stat.base_stat}</li>;
-            })}
-        </ul>
-      </div>
+      ) : null}
     </div>
   );
 };
