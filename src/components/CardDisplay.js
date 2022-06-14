@@ -11,7 +11,7 @@ const CardDisplay = ({ name, types, stats, sprite, id }) => {
               types.map((type, idx) => {
                 return (
                   <span id="type-span">
-                    <p id="types" key={idx}>
+                    <p id={type.type.name} key={idx}>
                       {" "}
                       {type.type.name}{" "}
                     </p>
