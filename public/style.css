@@ -25,6 +25,7 @@
   border: solid black 1px;
   width: 25em;
   height: 25em;
+  font-family: sans-serif;
 }
 
 #gen-button {
@@ -70,6 +71,7 @@ select {
 #stat-container {
   display: flex;
   flex-direction: row;
+  font-family: sans-serif;
 }
 
 #stat-text {
@@ -85,6 +87,9 @@ select {
 #types {
   display: flex;
   flex-direction: row;
+  border: 1px solid black;
+  border-radius: 40px;
+  padding: 2px 5px 2px 5px;
 }
 
 #type-container {
