@@ -58,7 +58,7 @@ const Nav = ({
               return <option key={idx}>{poke.name}</option>;
             })}
         </select>
-        <div class="multi-button">
+        <div className="multi-button">
           <button onClick={handleGenOne}>Gen 1</button>
           <button onClick={handleGenTwo}>Gen 2</button>
           <button onClick={handleGenThree}>Gen 3</button>

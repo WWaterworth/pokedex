@@ -10,11 +10,8 @@ const CardDisplay = ({ name, types, stats, sprite, id }) => {
             {types &&
               types.map((type, idx) => {
                 return (
-                  <span id="type-span">
-                    <p id={type.type.name} key={idx}>
-                      {" "}
-                      {type.type.name}{" "}
-                    </p>
+                  <span key={idx} id="type-span">
+                    <p id={type.type.name}> {type.type.name} </p>
                   </span>
                 );
               })}
